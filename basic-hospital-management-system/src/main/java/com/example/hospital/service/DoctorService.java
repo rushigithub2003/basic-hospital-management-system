@@ -10,5 +10,7 @@ public interface DoctorService {
 	
 	void deleteDoctorById(int id);
 	
+	void deleteAllDoctor();
+	
 	
 }

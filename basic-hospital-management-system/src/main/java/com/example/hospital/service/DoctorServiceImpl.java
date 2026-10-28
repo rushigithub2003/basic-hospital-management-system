@@ -6,7 +6,7 @@ import com.example.hospital.entity.Doctor;
 import com.example.hospital.repository.DoctorRepository;
 
 public class DoctorServiceImpl implements DoctorService {
-	
+
 	@Autowired
 	private DoctorRepository dr;
 
@@ -27,6 +27,12 @@ public class DoctorServiceImpl implements DoctorService {
 	public void deleteDoctorById(int id) {
 		// TODO Auto-generated method stub
 		dr.deleteById(id);
+	}
+
+	@Override
+	public void deleteAllDoctor() {
+		// TODO Auto-generated method stub
+		dr.deleteAll();
 	}
 
 }
