@@ -8,7 +8,7 @@ import com.example.hospital.repository.DoctorRepository;
 public class DoctorServiceImpl implements DoctorService {
 	
 	@Autowired
-	DoctorRepository dr;
+	private DoctorRepository dr;
 
 	@Override
 	public void addDoctor(Doctor d) {
@@ -19,6 +19,7 @@ public class DoctorServiceImpl implements DoctorService {
 	@Override
 	public Doctor getDoctorById(int id) {
 		// TODO Auto-generated method stub
+		dr.findById(id).get();
 		return null;
 	}
 
