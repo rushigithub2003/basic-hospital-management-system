@@ -1,6 +1,7 @@
 package com.example.hospital.controler;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,14 +27,20 @@ public class DoctorController {
 		doctorService.addDoctor(d);
 		return "Doctor Added";
 	}
-	
-	//get doctor by id
+
+	// get doctor by id
 	@GetMapping("doctor/{id}")
-	Doctor getDoctor(@PathVariable int id)
-	{
+	Doctor getDoctor(@PathVariable int id) {
 		return doctorService.getDoctorById(id);
 	}
 	
+	//delete doctor by id
+	@DeleteMapping("doctor/{id}")
+	String deleteDoctorById(@PathVariable int id)
+	{
+		doctorService.deleteDoctorById(id);
+		return "Dr. "+getDoctor(id).getName()+" Deleted";
+	}
 	
 
 }
