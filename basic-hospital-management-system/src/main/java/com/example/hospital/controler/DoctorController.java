@@ -14,11 +14,12 @@ import com.example.hospital.service.DoctorService;
 @RestController
 public class DoctorController {
 
+
 	DoctorService doctorService;
 
 	@Autowired
-	public void setDoctorService(DoctorService doctorServiceImpl) {
-		this.doctorService = doctorServiceImpl;
+	public void setDoctorService(DoctorService doctorImpl) {
+		this.doctorService = doctorImpl;
 	}
 
 	// addDoctor
@@ -33,14 +34,19 @@ public class DoctorController {
 	Doctor getDoctor(@PathVariable int id) {
 		return doctorService.getDoctorById(id);
 	}
-	
-	//delete doctor by id
+
+	// delete doctor by id
 	@DeleteMapping("doctor/{id}")
-	String deleteDoctorById(@PathVariable int id)
-	{
+	String deleteDoctorById(@PathVariable int id) {
 		doctorService.deleteDoctorById(id);
-		return "Dr. "+getDoctor(id).getName()+" Deleted";
+		return "Dr. " + getDoctor(id).getName() + " Deleted";
 	}
-	
+
+	// delete All doctors
+	@DeleteMapping("doctor")
+	String deleteAllDoctors() {
+		doctorService.deleteAllDoctor();
+		return "All Doctor Deleted";
+	}
 
 }

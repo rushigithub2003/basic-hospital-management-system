@@ -6,7 +6,8 @@ import org.springframework.stereotype.Service;
 import com.example.hospital.entity.Doctor;
 import com.example.hospital.repository.DoctorRepository;
 
-@Service
+//we can also change the bean name through this value = "doctorImpl".
+@Service(value = "doctorImpl")
 public class DoctorServiceImpl implements DoctorService {
 
 	@Autowired
