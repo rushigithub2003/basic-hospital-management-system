@@ -23,4 +23,10 @@ public class DoctorServiceImpl implements DoctorService {
 		return null;
 	}
 
+	@Override
+	public void deleteDoctorById(int id) {
+		// TODO Auto-generated method stub
+		dr.deleteById(id);
+	}
+
 }

@@ -7,4 +7,8 @@ public interface DoctorService {
 	void addDoctor(Doctor d);
 	
 	Doctor getDoctorById(int id);
+	
+	void deleteDoctorById(int id);
+	
+	
 }
