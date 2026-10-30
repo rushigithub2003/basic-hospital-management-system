@@ -1,5 +1,6 @@
 package com.example.hospital.controler;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -30,6 +31,14 @@ public class PatientController {
 	Patient getPatient(@PathVariable int id)
 	{
 		return patientService.getPatientById(id);
+	}
+	
+	//API to delete patient by id
+	@DeleteMapping("patient/{id}")
+	String deletePatientById(@PathVariable int id)
+	{
+		patientService.deletePatientById(id);
+		return "Patient Deleted";
 	}
 
 }

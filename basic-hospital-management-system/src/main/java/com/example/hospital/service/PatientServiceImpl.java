@@ -9,7 +9,7 @@ import com.example.hospital.repository.PatientRepository;
 @Service
 //@Primary
 public class PatientServiceImpl implements PatientService {
-	
+
 	@Autowired
 	PatientRepository pr;
 
@@ -24,14 +24,12 @@ public class PatientServiceImpl implements PatientService {
 		// TODO Auto-generated method stub
 		return pr.findById(id).get();
 	}
-	
-	void deletePatientById(int id)
-	{
+
+	public void deletePatientById(int id) {
 		pr.deleteById(id);
 	}
-	
-	void deleteAllPatient()
-	{
+
+	public void deleteAllPatient() {
 		pr.deleteAll();
 	}
 

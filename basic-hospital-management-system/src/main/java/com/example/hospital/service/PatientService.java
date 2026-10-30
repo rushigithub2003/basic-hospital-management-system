@@ -7,5 +7,9 @@ public interface PatientService {
 	void addPatient(Patient p);
 	
 	Patient getPatientById(int id);
+	
+	void deletePatientById(int id);
+	
+	void deleteAllPatient();
 
 }
