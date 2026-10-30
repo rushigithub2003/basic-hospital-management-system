@@ -16,4 +16,10 @@ public class PatientServiceImpl implements PatientService {
 		pr.save(p);
 	}
 
+	@Override
+	public Patient getPatientById(int id) {
+		// TODO Auto-generated method stub
+		return pr.findById(id).get();
+	}
+
 }
