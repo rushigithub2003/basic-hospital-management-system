@@ -21,5 +21,10 @@ public class PatientServiceImpl implements PatientService {
 		// TODO Auto-generated method stub
 		return pr.findById(id).get();
 	}
+	
+	void deletePatientById(int id)
+	{
+		pr.deleteById(id);
+	}
 
 }
