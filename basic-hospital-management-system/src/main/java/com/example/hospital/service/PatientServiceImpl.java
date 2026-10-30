@@ -26,5 +26,10 @@ public class PatientServiceImpl implements PatientService {
 	{
 		pr.deleteById(id);
 	}
+	
+	void deleteAllPatient()
+	{
+		pr.deleteAll();
+	}
 
 }
