@@ -25,20 +25,25 @@ public class PatientController {
 		patientService.addPatient(p);
 		return "Patient Added";
 	}
-	
-	//API to get patient info from DB
+
+	// API to get patient info from DB
 	@GetMapping("patient/{id}")
-	Patient getPatient(@PathVariable int id)
-	{
+	Patient getPatient(@PathVariable int id) {
 		return patientService.getPatientById(id);
 	}
-	
-	//API to delete patient by id
+
+	// API to delete patient by id
 	@DeleteMapping("patient/{id}")
-	String deletePatientById(@PathVariable int id)
-	{
+	String deletePatientById(@PathVariable int id) {
 		patientService.deletePatientById(id);
 		return "Patient Deleted";
+	}
+
+	// API to delete All Patient
+	@DeleteMapping("patient")
+	String deleteAllPatient() {
+		patientService.deleteAllPatient();
+		return "All Patient Deleted";
 	}
 
 }
