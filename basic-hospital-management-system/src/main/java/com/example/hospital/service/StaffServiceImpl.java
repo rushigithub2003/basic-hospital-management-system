@@ -20,7 +20,7 @@ public class StaffServiceImpl implements StaffService {
 	@Override
 	public Staff getStaffById(int id) {
 		// TODO Auto-generated method stub
-		return null;
+		return sr.findById(id).get();
 	}
 
 	@Override
