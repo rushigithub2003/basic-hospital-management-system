@@ -42,4 +42,11 @@ public class StaffController {
 
 	}
 
+	// create rest api to delete all staff.
+	@DeleteMapping("staff")
+	String deleteAllStaff() {
+		staffService.deleteAllStaff();
+		return "All Staff Delete";
+	}
+
 }
