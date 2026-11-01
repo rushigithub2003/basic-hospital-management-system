@@ -1,6 +1,7 @@
 package com.example.hospital.controler;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,13 +27,19 @@ public class StaffController {
 		staffService.addStaff(s);
 		return "Staff Added..";
 	}
-	
-	//create REST API to get existing staff information
+
+	// create REST API to get existing staff information
 	@GetMapping("staff/{id}")
-	Staff getStaffById(@PathVariable int id)
-	{
+	Staff getStaffById(@PathVariable int id) {
 		return staffService.getStaffById(id);
 	}
-	
+
+	// create rest api to delete existing staff by id
+	@DeleteMapping("staff/{id}")
+	String deleteStaffById(@PathVariable int id) {
+		staffService.deleteStaffById(id);
+		return "staff deleted";
+
+	}
 
 }
